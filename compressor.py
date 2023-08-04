@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import abc
 import bz2
 import gzip
@@ -46,7 +47,7 @@ class BZ2Compressor(Compressor):
 
 
 class NoCompressionCompressor(Compressor):
-    def compress(data: str) -> bytes:
+    def compress(self, data: str) -> bytes:
         return data.encode()
 
     def get_suffix(self) -> str:
